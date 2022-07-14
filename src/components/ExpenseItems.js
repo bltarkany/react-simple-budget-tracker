@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import './ExpenseItem.css';
 
-export default function ExpenseItems() {
+export default function ExpenseItems({id, date, title, amount}) {
 
-    // date formatting
-    const expenseDate = new Date(2021, 2, 28);
+
 
   return (
-    <div className='expense-item'>
-      <div>July 15, 2022</div>
+    <div className='expense-item' key={id}>
+      <div>{date.toISOString()}</div>
       <div className='expense-item__description'>
-        <h2>Car Insurance</h2>
-        <div className='expense-item__price'>$294.67</div>
+        <h2>{title}</h2>
+        <div className='expense-item__price'>${amount}</div>
       </div>
     </div>
   );
